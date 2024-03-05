@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+      <title>GeoSteam</title>
+    {% endblock %}
+
+   
+</head>
+<body>
+
+    {% block navbar %}
+<div class="container">
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">GeoSteam</a>
+      <nav class="nav nav-pills justify-content-center p-2">
+        <a class="nav-link" href="wells">Wells</a>
+        <a class="nav-link" href="operators">Operators</a>
+        <a class="nav-link" href="regions">Regions</a>
+      </nav>
+    </div>
+  </nav> 
+
+</div>
+ 
+    {% endblock %}
+
+  {% block content %}
+    <!-- default content text (typically empty) -->
+  {% endblock %}
+
+
+
+
+
+</body>
+</html>
