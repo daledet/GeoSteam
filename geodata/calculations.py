@@ -25,21 +25,19 @@ actual_work_turbine = isentropic_work_turbine * turbine_efficiency
 mass_flow_rate_of_steam_required = required_output / actual_work_turbine * 1000 # Converting to kg/s
 mass_flow_rate_of_water_required = mass_flow_rate_of_steam_required / quality.x
 
-#Outputs
-print(f'Two Phase Enthalpy = {h1.h} kJ/kg')
-print(f'Steam Quality = {steam_quality} %')
-print(f'Steam Enthalpy = {enthalpy_steam.h} kJ/jg')
-# print(f'Water Enthalpy {enthalpy_water.h} kJ/jg') # Water Enthalpy if needed
-print(f'Steam Entropy = {enthalpy_steam.s} kJ/kg')
-print(f'Turbine Exit Enthalpy = {turbine_exit_enthalpy.h} kJ/kg')
-print(f'Isentropic Work of Turbine = {isentropic_work_turbine} kJ/kg')
-print(f'Actual Work of Turbine = {actual_work_turbine} kJ/kg')
-print(f'Mass Flow Rate of Steam Required = {mass_flow_rate_of_steam_required} kg/s')
-print(f'Mass Flow Rate of Water Required = {mass_flow_rate_of_water_required} kg/s')
+# #Outputs
+# print(f'Two Phase Enthalpy = {h1.h} kJ/kg')
+# print(f'Steam Quality = {steam_quality} %')
+# print(f'Steam Enthalpy = {enthalpy_steam.h} kJ/jg')
+# # print(f'Water Enthalpy {enthalpy_water.h} kJ/jg') # Water Enthalpy if needed
+# print(f'Steam Entropy = {enthalpy_steam.s} kJ/kg')
+# print(f'Turbine Exit Enthalpy = {turbine_exit_enthalpy.h} kJ/kg')
+# print(f'Isentropic Work of Turbine = {isentropic_work_turbine} kJ/kg')
+# print(f'Actual Work of Turbine = {actual_work_turbine} kJ/kg')
+# print(f'Mass Flow Rate of Steam Required = {mass_flow_rate_of_steam_required} kg/s')
+# print(f'Mass Flow Rate of Water Required = {mass_flow_rate_of_water_required} kg/s')
 
 
-def add(a,b):
-    return a+b
 
 
 

@@ -35,3 +35,20 @@ class Region(models.Model):
 
     def __str__(self):
         return self.region_name
+    
+class Surface(models.Model):
+    wellhead_number = models.DecimalField(max_digits=10, decimal_places=2, null=True) 
+    temp_bottom_hole  = models.DecimalField(max_digits=10, decimal_places=2, null=True) 
+    pressure_bottom_hole = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    pressure_seperator = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    pressure_condensor = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    turbine_efficiency = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    turbine_exit_pressure = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    required_output = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+
+    def __str__(self):
+        return self.wellhead_number
+    
+    @property
+    def flow_required(self):
+        pass
