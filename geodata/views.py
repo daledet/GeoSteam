@@ -17,3 +17,7 @@ def operators(request):
 def regions(request):
   template = loader.get_template('regions.html')
   return HttpResponse(template.render())
+
+def surface(request):
+  template = loader.get_template('surface.html')
+  return HttpResponse(template.render())

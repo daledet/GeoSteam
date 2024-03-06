@@ -6,4 +6,5 @@ urlpatterns = [
     path('wells', views.wells, name='wells'),
     path('operators', views.operators, name='operators'),
     path('regions', views.regions, name='regions'),
+    path('surface', views.surface, name='surface'),
 ]
