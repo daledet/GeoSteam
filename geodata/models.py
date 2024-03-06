@@ -1,4 +1,6 @@
 from django.db import models
+from . import calculations
+
 
 
 class Operator(models.Model):

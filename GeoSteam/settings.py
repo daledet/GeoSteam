@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'iapws',
     'geodata',
+ 
 ]
 
 MIDDLEWARE = [
