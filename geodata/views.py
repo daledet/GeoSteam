@@ -1,10 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
+from .models import Surface, Region, Well, Operator
+
+def update_wells(request):
+  return render(request, 'update_wells.html')
 
 def start(request):
-  template = loader.get_template('start.html')
-  return HttpResponse(template.render())
+  return render(request, 'start.html, {}')
+  # template = loader.get_template('start.html')
+  # return HttpResponse(template.render())
 
 def wells(request):
   template = loader.get_template('wells.html')

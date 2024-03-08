@@ -51,4 +51,4 @@ class Surface(models.Model):
     
     @property
     def flow_required(self):
-        pass
+        return 41
