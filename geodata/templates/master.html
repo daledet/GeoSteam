@@ -1,9 +1,12 @@
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}
@@ -14,20 +17,15 @@
       {% block navbar %}
     <div class="container d-flex align-items-center justify-content-center">
       <div>
-        <a class="nav-link" href="/"><h1>GeoSteam</h1></a>
+        <a class="nav-link text-primary-emphasis fs-2 fw-bold" href="/">GeoSteam</a>
       </div>
     </div>
-    <div class="container d-flex align-items-center justify-content-center">
-      <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <nav class="nav nav-pills justify-content-center p-2">
-            <a class="nav-link" href="wells">Wells</a>
-            <a class="nav-link" href="operators">Operators</a>
-            <a class="nav-link" href="regions">Regions</a>
-            <a class="nav-link" href="surface">Surface</a>
-        </div>
-      </nav>
-    </div>
+          <nav class="nav justify-content-center pb-2">
+            <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="wells">Wells</a></button>
+            <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="operators">Operators</a></button>
+            <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="regions">Regions</a></button>
+            <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="surface">Surface</a></button>
+          </nav>
   {% endblock %}
   {% block content %}
       <!-- default content text -->

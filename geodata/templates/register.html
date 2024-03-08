@@ -1,0 +1,9 @@
+{% extends "master.html" %}
+
+{% block content %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{registerform|crispy}}
+    <input type="submit" value="Register"/>
+</form>
+{% endblock  %}

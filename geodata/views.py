@@ -21,3 +21,7 @@ def regions(request):
 def surface(request):
   template = loader.get_template('surface.html')
   return HttpResponse(template.render())
+
+def register(request):
+  template = loader.get_template('register.html')
+  return HttpResponse(template.render())

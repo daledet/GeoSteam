@@ -1,27 +1,41 @@
 {% extends "master.html" %}
 
 {% block content %}
+
+
 <div class="container">
-    <table class="table table-striped ">
-        <thead>
-            <tr class="text-uppercase text-secondary">
-                <th scope="col">Operator</th>
-                <th scope="col">Location</th>
-                <th scope="col">Contact</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Fervo Energy</td>
-                <td>Houston</td>
-                <td>Elliot Howard</td>
-                <td>elliot@feevo.com</td>
-                <td>999-9999</td>
-                <td>Update</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <div class="page-header">
+            <h3 id="well_data">Operator Data</h3>
+          </div>
+          <div class="bs-component">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                    <th scope="col">Operator</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-primary">
+                    <td>Fervo Energy</td>
+                    <td>Houston</td>
+                    <td>Elliot Howard</td>
+                    <td>elliot@feevo.com</td>
+                    <td>999-9999</td>
+                  <td><button type="button" class="btn btn-light btn-sm">Update</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock  %}

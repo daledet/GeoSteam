@@ -7,4 +7,5 @@ urlpatterns = [
     path('operators', views.operators, name='operators'),
     path('regions', views.regions, name='regions'),
     path('surface', views.surface, name='surface'),
+    path('register', views.register, name='register'),
 ]
