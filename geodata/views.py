@@ -7,26 +7,24 @@ def update_wells(request):
   return render(request, 'update_wells.html')
 
 def start(request):
-  return render(request, 'start.html, {}')
-  # template = loader.get_template('start.html')
-  # return HttpResponse(template.render())
+  return render(request, 'start.html')
 
-def wells(request):
-  template = loader.get_template('wells.html')
-  return HttpResponse(template.render())
+
+def wells(request): 
+  return render(request, 'wells.html')
+
 
 def operators(request):
-  template = loader.get_template('operators.html')
-  return HttpResponse(template.render())
+  return render(request, 'operators.html')
+
 
 def regions(request):
-  template = loader.get_template('regions.html')
-  return HttpResponse(template.render())
+  return render(request, 'regions.html')
 
 def surface(request):
-  template = loader.get_template('surface.html')
-  return HttpResponse(template.render())
+  return render(request, 'surface.html')
+
 
 def register(request):
-  template = loader.get_template('register.html')
-  return HttpResponse(template.render())
+  return render(request, 'register.html')
+
