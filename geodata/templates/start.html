@@ -1,1 +1,9 @@
 {% extends "master.html" %}
+
+{% if wells %}
+
+{% for well in wells %}
+{{ well }}
+{% endfor %}
+
+{% endif %}

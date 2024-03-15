@@ -8,6 +8,10 @@
         <div class="page-header">
           <h3 id="well_data">Well Data</h3>
         </div>
+
+        {% if wells %}
+        {% for well in wells %}
+
         <div class="bs-component">
           <table class="table table-hover align-middle">
             <thead>
@@ -23,19 +27,23 @@
             </thead>
             <tbody>
               <tr class="table-primary">
-                <td>Bearskin</td>
-                <td>Fervo Energy</td>
-                <td>Utah</td>
-                <td>8 3/8</td>
-                <td>13,000</td>
-                <td>220</td>
-                <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</td>
+                <td>{{ well.well_name }}</td>
+                <td>{{ well.operator }}</td>
+                <td>{{ well.well_location }}</td>
+                <td>{{ well.well_section }}</td>
+                <td>{{ well.well_depth }}</td>
+                <td>{{ well.well_temperature }}</td>
+                <td>{{ well.well_activity }}</td>
                 <td><button type="button" class="btn btn-light btn-sm">View</button></td>
                 <td><button type="button" class="btn btn-light btn-sm"><a href="{% url 'update_wells' %}">Update</a></button></td>
               </tr>
             </tbody>
           </table>
         </div>
+
+        {% endfor %}
+        
+        {% endif %}
       </div>
     </div>
   </div>

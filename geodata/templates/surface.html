@@ -7,6 +7,8 @@
         <div class="page-header">
           <h3 id="well_data">Well Data</h3>
         </div>
+        {% if surfaces %}
+        {% for surface in surfaces %}
         <div class="bs-component">
           <table class="table table-hover">
             <thead>
@@ -17,12 +19,13 @@
             </thead>
             <tbody>
               <tr class="table-primary">
-                <td>XXXX</td>
-                <td>X {{ flow_required }}</td>
+                <td>{{ surface.temp_bottom_hole}}</td>
+                <td>{{ surface.pressure_bottom_hole}}</td>
 
             </tbody>
           </table>
         </div>
+ 
       </div>
     </div>
   </div>
@@ -47,10 +50,10 @@
             </thead>
             <tbody>
               <tr class="table-primary">
-                <td>XXXX</td>
-                <td>XXXX</td>
-                <td>XXXX</td>
-                <td>XXXX</td>
+                <td>{{ surface.pressure_seperator}}</td>
+                <td>{{ surface.turbine_efficiency}}</td>
+                <td>{{ surface.turbine_exit_pressure}}</td>
+                <td>{{ surface.pressure_condensor}}</td>
 
             </tbody>
           </table>
@@ -79,12 +82,15 @@
             </thead>
             <tbody>
               <tr class="table-primary">
-                <td>XXXX</td>
-                <td>XXXX</td>
-                <td>XXXX</td>
+                <td>{{ surface.required_output}}</td>
+                <td>Flow Rate Steam </td>
+                <td>Flow Rate Water </td>
             </tbody>
           </table>
         </div>
+
+        {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>

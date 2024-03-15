@@ -7,22 +7,26 @@ def update_wells(request):
   return render(request, 'update_wells.html')
 
 def start(request):
-  return render(request, 'start.html')
+  wells = Well.objects.all()
+  return render(request, 'start.html', {'wells': wells})
 
 
-def wells(request): 
-  return render(request, 'wells.html')
+def wells(request):
+  wells = Well.objects.all() 
+  return render(request, 'wells.html', {'wells': wells})
 
 
 def operators(request):
-  return render(request, 'operators.html')
-
+  operators = Operator.objects.all() 
+  return render(request, 'operators.html', {'operators': operators})
 
 def regions(request):
-  return render(request, 'regions.html')
+  regions = Region.objects.all()
+  return render(request, 'regions.html', {'regions': regions})
 
 def surface(request):
-  return render(request, 'surface.html')
+  surfaces = Surface.objects.all()
+  return render(request, 'surface.html', {'surfaces': surfaces})
 
 
 def register(request):

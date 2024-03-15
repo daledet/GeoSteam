@@ -1,8 +1,8 @@
 {% extends "master.html" %}
 {% block content %}
 
-
-
+{% if regions %}
+{% for region in regions %}
 
 <div class="container">
   <div class="bs-docs-section">
@@ -24,16 +24,19 @@
             </thead>
             <tbody>
               <tr class="table-primary">
-                <td>MENATI</td>
-                <td>Turkey</td>
-                <td>Name Name</td>
-                <td>name@bakerhughes.com</td>
-                <td>999-9999</td>
+                <td>{{ region.region_name }}</td>
+                <td>{{ region.region_country }}</td>
+                <td>{{ region.region_contact }}</td>
+                <td>{{ region.region_contact_email }}</td>
+                <td>{{ region.region_contact_phone }}</td>
                 <td><button type="button" class="btn btn-light btn-sm">Update</button></td>
 
             </tbody>
           </table>
         </div>
+        {% endfor %}
+{% endif %}
+
       </div>
     </div>
   </div>
