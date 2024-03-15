@@ -1,5 +1,7 @@
 {% extends "master.html" %}
 {% block content %}
+
+
 <div class="container">
   <div class="bs-docs-section">
     <div class="row">
@@ -7,99 +9,119 @@
         <div class="page-header">
           <h3 id="well_data">Well Data</h3>
         </div>
-        {% if surfaces %}
-        {% for surface in surfaces %}
-        <div class="bs-component">
-          <table class="table table-hover">
-            <thead>
-              <tr>
+
+
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
                 <th scope="col">Bottom Hole Temp</th>   
                 <th scope="col">Bottom Hole Pressure</th>
+
               </tr>
             </thead>
             <tbody>
-              <tr class="table-primary">
+              <tr>
+                
+        {% if surfaces %}
+        {% for surface in surfaces %}
                 <td>{{ surface.temp_bottom_hole}}</td>
                 <td>{{ surface.pressure_bottom_hole}}</td>
 
+              </tr>
+              {% endfor %}
+              {% endif %}
             </tbody>
           </table>
         </div>
- 
+  
       </div>
     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="bs-docs-section">
-    <div class="row">
-      <div class="col-lg-12 ">
-        <div class="page-header">
-          <h3 id="well_data">Surface Data</h3>
-        </div>
-        <div class="bs-component">
+
+
+
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <div class="page-header">
+            <h3 id="well_data">Surface Data</h3>
+          </div>
+  
+  
           <table class="table table-hover align-middle">
             <thead>
               <tr>
-                <th scope="col">Seperator Pressure</th>
-                <th scope="col">Turbine Efficiency</th>
-                <th scope="col">Turbine Exit Pressure</th>
-                <th scope="col">Condensor Pressure</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="table-primary">
-                <td>{{ surface.pressure_seperator}}</td>
-                <td>{{ surface.turbine_efficiency}}</td>
-                <td>{{ surface.turbine_exit_pressure}}</td>
-                <td>{{ surface.pressure_condensor}}</td>
 
-            </tbody>
-          </table>
+                  <th scope="col">Seperator Pressure</th>
+                  <th scope="col">Turbine Efficiency</th>
+                  <th scope="col">Turbine Exit Pressure</th>
+                  <th scope="col">Condensor Pressure</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+          {% if surfaces %}
+          {% for surface in surfaces %}
+                  <td>{{ surface.pressure_seperator}}</td>
+                  <td>{{ surface.turbine_efficiency}}</td>
+                  <td>{{ surface.turbine_exit_pressure}}</td>
+                  <td>{{ surface.pressure_condensor}}</td>
+                
+                </tr>
+                {% endfor %}
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+    
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
-<div class="container">
-  <div class="bs-docs-section">
-    <div class="row">
-      <div class="col-lg-12 ">
-        <div class="page-header">
-          <h3 id="well_data">Output Data</h3>
+
+
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12 ">
+            <div class="page-header">
+              <h3 id="well_data">Well Data</h3>
+            </div>
+    
+    
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+
+                    <th scope="col">Required Output</th>
+                    <th scope="col">Mass Flow Rate of Steam Required</th>
+                    <th scope="col">Mass Flow Rate of Water Required</th>
+                 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+            {% if surfaces %}
+            {% for surface in surfaces %}
+                    <td>{{ surface.required_output}}</td>
+                    <td>Flow Rate Steam </td>
+                    <td>Flow Rate Water </td>
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+            </div>
+      
+          </div>
         </div>
-        <div class="bs-component">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Required Output</th>
-                <th scope="col">Mass Flow Rate of Steam Required</th>
-                <th scope="col">Mass Flow Rate of Water Required</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="table-primary">
-                <td>{{ surface.required_output}}</td>
-                <td>Flow Rate Steam {{ surface.flow_required }} </td>
-                <td>Flow Rate Water </td>
-            </tbody>
-          </table>
-        </div>
 
-        {% endfor %}
-        {% endif %}
-      </div>
-    </div>
+
+
+
+
   </div>
-</div>
-
-<nav class="nav justify-content-center pb-2">
-  <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="#">View</a></button>
-  <button type="button" class="btn btn-light btn-sm m-2"><a class="nav-link" href="#">Update</a></button>
- </nav>
-
-
-{% endblock  %}
+  
+  {% endblock  %}

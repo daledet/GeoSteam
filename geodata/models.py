@@ -1,5 +1,6 @@
 from django.db import models
 from . import calculations
+from iapws import IAPWS97
 
 
 
@@ -37,18 +38,18 @@ class Region(models.Model):
         return self.region_name
     
 class Surface(models.Model):
-    wellhead_number = models.CharField(max_length=255, null=True)
-    temp_bottom_hole  = models.CharField(max_length=255, null=True) 
-    pressure_bottom_hole = models.CharField(max_length=255, null=True)
-    pressure_seperator = models.CharField(max_length=255, null=True)
-    pressure_condensor = models.CharField(max_length=255, null=True)
-    turbine_efficiency = models.CharField(max_length=255, null=True)
-    turbine_exit_pressure = models.CharField(max_length=255, null=True)
-    required_output = models.CharField(max_length=255, null=True)
+    wellhead_name = models.CharField(max_length=255, null=True)
+    temp_bottom_hole  = models.FloatField(max_length=255, null=True) 
+    pressure_bottom_hole = models.FloatField(max_length=255, null=True)
+    pressure_seperator = models.FloatField(max_length=255, null=True)
+    pressure_condensor = models.FloatField(max_length=255, null=True)
+    turbine_efficiency = models.FloatField(max_length=255, null=True)
+    turbine_exit_pressure = models.FloatField(max_length=255, null=True)
+    required_output = models.FloatField(max_length=255, null=True)
 
     def __str__(self):
-        return self.wellhead_number
+        return self.wellhead_name
     
     @property
     def flow_required(self):
-        return 41
+        return 100
