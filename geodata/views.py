@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Surface, Region, Well, Operator
 
+def home(request):
+  return render(request, 'home.html')
+
 def update_wells(request):
   return render(request, 'update_wells.html')
 

@@ -1,49 +1,39 @@
 {% extends "master.html" %}
-
 {% block content %}
-
-
 <div class="container">
   <div class="bs-docs-section">
     <div class="row">
       <div class="col-lg-12 ">
         <div class="page-header">
-          <h3 id="well_data">Operator Data</h3>
+          <h3 id="well_data">Well Data</h3>
         </div>
-
-
-
-
         <table class="table table-hover align-middle">
           <thead>
+            <tr> 
+              <th scope="col">Operator</th>
+              <th scope="col">Location</th>
+              <th scope="col">Contact</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
-                    <th scope="col">Operator</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Contact</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr >
-                  {% if operators %}
-                  {% for operator in operators %}
-                    <td>{{operator.operator_name}}</td>
-                    <td>{{operator.operator_location}}</td>
-                    <td>{{operator.operator_contact}}</td>
-                    <td>{{operator.operator_email}}</td>
-                    <td>{{operator.operator_phone}}</td>
-                  <td><button type="button" class="btn btn-light btn-sm">Update</button></td>
-                </tr>
-                {% endfor %}
-                {% endif %}
-              </tbody>
-            </table>
-          </div>
-    
-        </div>
+              {% if operators %}
+              {% for operator in operators %}
+              <td>{{operator.operator_name}}</td>
+              <td>{{operator.operator_location}}</td>
+              <td>{{operator.operator_contact}}</td>
+              <td>{{operator.operator_email}}</td>
+              <td>{{operator.operator_phone}}</td>
+              <td>{{ well.well_activity }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+          </tbody>
+        </table>
       </div>
     </div>
-    
-    {% endblock  %}
+  </div>
+</div>
+{% endblock  %}
